@@ -7,9 +7,10 @@ phases:
       # Check AWS CLI version
       - aws --version
       # Log in to Amazon ECR
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725402260.dkr.ecr.us-east-1.amazonaws.com
+      #- aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 851725402260.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 778977544995.dkr.ecr.us-east-1.amazonaws.com
       # Define repository URI and image tag#
-      - REPOSITORY_URI=851725402260.dkr.ecr.us-east-1.amazonaws.com/capstone2
+      - REPOSITORY_URI=778977544995.dkr.ecr.us-east-1.amazonaws.com/ecr-simplilearn-capstone2
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
